@@ -44,8 +44,10 @@ export type StayPackage = {
   includes: string[];
 };
 
-export const MIN_GUESTS = 5;
+export const MIN_GUESTS = 1;
 export const MAX_GUESTS = 40;
+
+const guestWord = (count: number) => (count === 1 ? "guest" : "guests");
 
 export const navItems = [
   { label: "Photos", href: "#photos" },
@@ -59,7 +61,7 @@ export const listing = {
   title: "Adventure Zone — jungle cottage stay in Dandeli",
   meta: ["Cottages", "Swimming pool", "Meals included", "Adventure packages"],
   overviewTitle: "Cottage stay with pool and river adventures",
-  overviewFacts: ["Stay + food in every package", `Minimum ${MIN_GUESTS} guests`, "Family, friends & couples"],
+  overviewFacts: ["Stay + food in every package", `Minimum ${MIN_GUESTS} ${guestWord(MIN_GUESTS)}`, "Family, friends & couples"],
   tagline: "Away from the city rush, in nature’s lap.",
   intro: [
     "Welcome to Adventure Zone — your own private paradise in Dandeli. We offer peace and quiet, beautiful views and heartfelt hospitality. Whether it is a weekend with family or a relaxing holiday with friends, our homestay gives you the comfort of home and a stay you will remember.",
@@ -127,7 +129,7 @@ export const packages: StayPackage[] = [
 
 export const packagesCopy = {
   title: "Choose your package",
-  lead: `Prices are per person. Each package needs a minimum of ${MIN_GUESTS} guests.`,
+  lead: `Prices are per person. Each package needs a minimum of ${MIN_GUESTS} ${guestWord(MIN_GUESTS)}.`,
   select: "Select",
   selected: "Selected",
   rateCard: "View the rate card",
@@ -190,7 +192,7 @@ export const locationCopy = {
 };
 
 export const thingsToKnow: IconItem[] = [
-  { icon: Users, title: "Group bookings", text: `Packages are priced per person, minimum ${MIN_GUESTS} guests.` },
+  { icon: Users, title: "Group bookings", text: `Packages are priced per person, minimum ${MIN_GUESTS} ${guestWord(MIN_GUESTS)}.` },
   { icon: Tag, title: "Launch offer", text: "Special discount on the first 10 bookings — ask when you enquire." },
   { icon: MessageCircle, title: "How booking works", text: "Send your dates on WhatsApp or call. We confirm availability and the final price directly." },
 ];
